@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRA Trading Company | Vehicles, Logistics & Electronics</title>
+    <!-- Tailwind CSS CDN for modern utilities -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .bg-navy-900 { background-color: #0f172a; }
+        .bg-navy-800 { background-color: #1e293b; }
+        .text-accent-cyan { color: #06b6d4; }
+        .bg-accent-blue { background-color: #0284c7; }
+        .bg-accent-blue:hover { background-color: #0369a1; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- HEADER / NAVIGATION BAR -->
+    <header class="sticky top-0 z-40 bg-navy-900 text-white shadow-lg transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Brand Name -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <div class="w-10 h-10 rounded-lg bg-gradient-to-tr from-cyan-500 to-blue-600 flex items-center justify-center font-bold text-xl text-white shadow-md group-hover:scale-105 transition-transform">
+                        IRA
+                    </div>
+                    <div>
+                        <span class="text-xl font-bold tracking-tight text-white block leading-none">IRA TRADING</span>
+                        <span class="text-xs text-cyan-400 font-medium tracking-widest uppercase">Company Ltd</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#home" class="hover:text-cyan-400 transition-colors py-1">Home</a>
+                    <a href="#services" class="hover:text-cyan-400 transition-colors py-1">Services</a>
+                    <a href="#vehicles" class="hover:text-cyan-400 transition-colors py-1">Vehicles</a>
+                    <a href="#logistics" class="hover:text-cyan-400 transition-colors py-1">Delivery</a>
+                    <a href="#electronics" class="hover:text-cyan-400 transition-colors py-1">Electronics</a>
+                    <a href="#about" class="hover:text-cyan-400 transition-colors py-1">About Us</a>
+                    <a href="#contact" class="hover:text-cyan-400 transition-colors py-1">Contact</a>
+                </nav>
+
+                <!-- Action Button & Mobile Toggle -->
+                <div class="flex items-center space-x-4">
+                    <button onclick="openModal('quoteModal')" class="hidden sm:inline-flex items-center px-4 py-2.5 rounded-lg bg-cyan-500 text-slate-900 font-semibold hover:bg-cyan-400 transition-all shadow-md transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-calculator mr-2"></i> Get Quote
+                    </button>
+                    <!-- Mobile menu button -->
+                    <button id="mobileMenuBtn" onclick="toggleMobileMenu()" class="md:hidden text-slate-300 hover:text-white p-2 rounded-md focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobileMenu" class="hidden md:hidden bg-navy-800 border-t border-slate-700 px-4 pt-3 pb-6 space-y-2">
+            <a href="#home" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700">Home</a>
+            <a href="#services" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700">Services</a>
+            <a href="#vehicles" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700">Vehicles</a>
+            <a href="#logistics" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700">Delivery</a>
+            <a href="#electronics" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700">Electronics</a>
+            <a href="#about" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700">About Us</a>
+            <a href="#contact" onclick="toggleMobileMenu()" class="block px-3 py-2 rounded-md text-base font-medium hover:bg-slate-700">Contact</a>
+            <button onclick="toggleMobileMenu(); openModal('quoteModal')" class="w-full mt-2 py-2.5 bg-cyan-500 text-slate-900 font-bold rounded-lg hover:bg-cyan-400">
+                Get a Quote
+            </button>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="home" class="relative bg-navy-900 text-white overflow-hidden py-20 lg:py-28">
+        <!-- Background Decorative Elements -->
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#06b6d4_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        <div class="absolute -top-24 -right-24 w-96 h-96 bg-cyan-500 rounded-full filter blur-[128px] opacity-20"></div>
+        <div class="absolute -bottom-24 -left-24 w-96 h-96 bg-blue-600 rounded-full filter blur-[128px] opacity-20"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <span class="inline-flex items-center px-3.5 py-1.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-400 border border-cyan-500/30">
+                        <i class="fa-solid fa-globe mr-2"></i> Multi-Sector Commercial Solutions
+                    </span>
+                    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight">
+                        Your Trusted Partner in <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-400">Global Trade</span>, Logistics & Tech
+                    </h1>
+                    <p class="text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0">
+                        IRA Trading Company delivers excellence across vehicle importations, nationwide fast delivery solutions, and wholesale tech & electronic devices.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+                        <a href="#services" class="w-full sm:w-auto px-7 py-3.5 rounded-lg bg-accent-blue text-white font-semibold hover:shadow-lg transition-all text-center">
+                            Explore Services <i class="fa-solid fa-arrow-right ml-2"></i>
+                        </a>
+                        <button onclick="openModal('quoteModal')" class="w-full sm:w-auto px-7 py-3.5 rounded-lg border border-slate-600 bg-slate-800/80 hover:bg-slate-800 text-slate-200 font-semibold transition-all">
+                            Request Import Quote
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Hero Graphic Cards -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-4">
+                    <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700/60 shadow-xl space-y-3 transform hover:-translate-y-1 transition-transform">
+                        <div class="w-12 h-12 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-car"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-white">Vehicle Imports</h3>
+                        <p class="text-xs text-slate-400">Verified quality cars, trucks & heavy machinery sourcing.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700/60 shadow-xl space-y-3 translate-y-4 transform hover:translate-y-3 transition-transform">
+                        <div class="w-12 h-12 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center text-2xl">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h3 class="font-bold text-lg text-white">Fast Delivery</h3>
+                        <p class="text-xs text-slate-400">Reliable logistics, fleet services, and real-time package tracking.</p>
+                    </div>
+                    <div class="p-6 rounded-2xl bg-slate-800/80 border border-slate-700/60 shadow-xl space-y-3 col-span-2 transform hover:-translate-y-1 transition-transform">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center text-2xl shrink-0">
+                                <i class="fa-solid fa-laptop"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-lg text-white">Electronics & Tech</h3>
+                                <p class="text-xs text-slate-400">Premium smartphones, laptops, and consumer electronics distribution.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICE PILLARS SECTION -->
+    <section id="services" class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-xs font-bold text-cyan-600 uppercase tracking-widest mb-2">Our Key Activities</h2>
+                <h3 class="text-3xl sm:text-4xl font-extrabold text-slate-900">Comprehensive Solutions for Businesses & Individuals</h3>
+                <p class="text-slate-600 mt-3">We streamline international trade, delivery networks, and high-tech equipment supply under one transparent roof.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Vehicle Import Card -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl transition-all flex flex-col group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80" alt="Vehicle Imports" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/FFFFFF?text=Vehicle+Imports';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                        <span class="absolute bottom-4 left-4 bg-cyan-500 text-slate-900 font-bold text-xs px-3 py-1 rounded-full uppercase">Import Division</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-2">Vehicle Sourcing & Imports</h4>
+                            <p class="text-slate-600 text-sm mb-4">Direct sourcing of Japanese, European, and American automobiles, commercial trucks, and heavy equipment with full customs clearance support.</p>
+                            <ul class="space-y-2 text-xs text-slate-600 mb-6">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-500 mr-2"></i> Inspection & Quality Verification</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-500 mr-2"></i> Shipping & Port Clearance</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-cyan-500 mr-2"></i> Direct Door-to-Door Delivery</li>
+                            </ul>
+                        </div>
+                        <a href="#vehicles" class="inline-flex items-center text-sm font-bold text-accent-blue hover:text-cyan-600">
+                            View Vehicle Catalog <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Logistics Card -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl transition-all flex flex-col group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=800&q=80" alt="Delivery Services" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/FFFFFF?text=Delivery+Services';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                        <span class="absolute bottom-4 left-4 bg-blue-600 text-white font-bold text-xs px-3 py-1 rounded-full uppercase">Logistics</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-2">Delivery & Express Courier</h4>
+                            <p class="text-slate-600 text-sm mb-4">Reliable last-mile delivery, corporate dispatch contracts, and inter-state logistics backed by live GPS tracking.</p>
+                            <ul class="space-y-2 text-xs text-slate-600 mb-6">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-blue-600 mr-2"></i> Same-Day Local Delivery</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-blue-600 mr-2"></i> Corporate Fleet Partnerships</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-blue-600 mr-2"></i> Real-Time Shipment Tracking</li>
+                            </ul>
+                        </div>
+                        <a href="#logistics" class="inline-flex items-center text-sm font-bold text-accent-blue hover:text-cyan-600">
+                            Track Shipment <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Electronics Card -->
+                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-xl transition-all flex flex-col group">
+                    <div class="h-48 bg-slate-800 relative overflow-hidden flex items-center justify-center">
+                        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80" alt="Electronics Trading" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/FFFFFF?text=Electronics';">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+                        <span class="absolute bottom-4 left-4 bg-indigo-600 text-white font-bold text-xs px-3 py-1 rounded-full uppercase">Electronics</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h4 class="text-xl font-bold text-slate-900 mb-2">Electronics & Tech Devices</h4>
+                            <p class="text-slate-600 text-sm mb-4">Wholesale and retail supply of certified original smartphones, laptops, smart accessories, and office electronics.</p>
+                            <ul class="space-y-2 text-xs text-slate-600 mb-6">
+                                <li class="flex items-center"><i class="fa-solid fa-check text-indigo-600 mr-2"></i> Authorized Brand Sourcing</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-indigo-600 mr-2"></i> Manufacturer Warranty</li>
+                                <li class="flex items-center"><i class="fa-solid fa-check text-indigo-600 mr-2"></i> Bulk Commercial Discounts</li>
+                            </ul>
+                        </div>
+                        <a href="#electronics" class="inline-flex items-center text-sm font-bold text-accent-blue hover:text-cyan-600">
+                            Browse Products <i class="fa-solid fa-arrow-right ml-2 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VEHICLES SHOWCASE & ESTIMATOR SECTION -->
+    <section id="vehicles" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <span class="text-xs font-bold text-cyan-600 uppercase tracking-widest">Vehicles Division</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Featured Vehicles & Imports</h2>
+                </div>
+                <button onclick="openModal('quoteModal')" class="mt-4 md:mt-0 px-5 py-2.5 rounded-lg bg-navy-900 text-white font-semibold hover:bg-slate-800 text-sm">
+                    <i class="fa-solid fa-plus-circle mr-2"></i> Custom Vehicle Order
+                </button>
+            </div>
+
+            <!-- Vehicle Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Vehicle 1 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?auto=format&fit=crop&w=600&q=80" alt="SUV" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/FFFFFF?text=SUV';">
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-slate-900">2022 Executive SUV 4x4</h3>
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-green-100 text-green-800 rounded">Available</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-4">Automatic • Turbo Diesel • Full Option • Clean Title</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+                            <span class="text-sm font-bold text-slate-900">Est. Import Quote</span>
+                            <button onclick="prefillQuote('2022 Executive SUV 4x4')" class="text-xs bg-slate-100 hover:bg-cyan-50 text-cyan-700 font-bold px-3 py-1.5 rounded">
+                                Inquire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 2 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1559416523-140ddc3d238c?auto=format&fit=crop&w=600&q=80" alt="Truck" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/FFFFFF?text=Commercial+Truck';">
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-slate-900">Commercial Light Truck</h3>
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-blue-100 text-blue-800 rounded">On Transit</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-4">Manual • 3.5 Ton Cargo Capacity • Low Mileage</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+                            <span class="text-sm font-bold text-slate-900">Est. Import Quote</span>
+                            <button onclick="prefillQuote('Commercial Light Truck')" class="text-xs bg-slate-100 hover:bg-cyan-50 text-cyan-700 font-bold px-3 py-1.5 rounded">
+                                Inquire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vehicle 3 -->
+                <div class="border border-slate-200 rounded-xl overflow-hidden hover:shadow-lg transition-shadow">
+                    <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?auto=format&fit=crop&w=600&q=80" alt="Sedan" class="w-full h-48 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/600x400/1e293b/FFFFFF?text=Hybrid+Sedan';">
+                    <div class="p-5">
+                        <div class="flex justify-between items-start mb-2">
+                            <h3 class="font-bold text-lg text-slate-900">2023 Luxury Hybrid Sedan</h3>
+                            <span class="text-xs font-semibold px-2.5 py-1 bg-cyan-100 text-cyan-800 rounded">Pre-Order</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mb-4">Hybrid EV • Leather Interior • Safety Sense</p>
+                        <div class="flex items-center justify-between pt-3 border-t border-slate-100">
+                            <span class="text-sm font-bold text-slate-900">Est. Import Quote</span>
+                            <button onclick="prefillQuote('2023 Luxury Hybrid Sedan')" class="text-xs bg-slate-100 hover:bg-cyan-50 text-cyan-700 font-bold px-3 py-1.5 rounded">
+                                Inquire
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DELIVERY & LOGISTICS INTERACTIVE TRACKER -->
+    <section id="logistics" class="py-20 bg-slate-900 text-white relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center mb-12">
+                <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Logistics & Express</span>
+                <h2 class="text-3xl font-extrabold mt-1">Track Your Delivery</h2>
+                <p class="text-slate-400 text-sm mt-2">Enter your IRA Tracking Code (Try sample code: <button onclick="setSampleCode('IRA-8842-Burundi')" class="text-cyan-400 font-mono underline hover:text-cyan-300">IRA-8842-Burundi</button> or <button onclick="setSampleCode('IRA-9012-Transit')" class="text-cyan-400 font-mono underline hover:text-cyan-300">IRA-9012-Transit</button>)</p>
+            </div>
+
+            <!-- Tracking Input Box -->
+            <div class="max-w-2xl mx-auto bg-slate-800 p-4 rounded-2xl border border-slate-700 shadow-2xl mb-10">
+                <form id="trackingForm" onsubmit="trackPackage(event)" class="flex flex-col sm:flex-row gap-3">
+                    <div class="relative flex-1">
+                        <i class="fa-solid fa-magnifying-glass absolute left-4 top-3.5 text-slate-400"></i>
+                        <input type="text" id="trackingInput" required placeholder="e.g. IRA-8842-Burundi" class="w-full pl-11 pr-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-500 text-sm">
+                    </div>
+                    <button type="submit" class="px-6 py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold rounded-lg transition-colors flex items-center justify-center">
+                        <i class="fa-solid fa-location-dot mr-2"></i> Track Now
+                    </button>
+                </form>
+            </div>
+
+            <!-- Tracking Result Box (Hidden by default) -->
+            <div id="trackingResult" class="max-w-3xl mx-auto bg-slate-800/90 rounded-2xl p-6 border border-slate-700 hidden">
+                <div class="flex flex-wrap items-center justify-between pb-4 border-b border-slate-700 mb-6 gap-2">
+                    <div>
+                        <span class="text-xs text-slate-400">Tracking Code:</span>
+                        <h4 class="font-mono text-lg font-bold text-cyan-400" id="resCode">IRA-8842-Burundi</h4>
+                    </div>
+                    <div>
+                        <span class="text-xs text-slate-400">Status:</span>
+                        <span class="inline-block bg-green-500/20 text-green-400 text-xs font-bold px-3 py-1 rounded-full border border-green-500/30 ml-2" id="resStatus">In Transit</span>
+                    </div>
+                </div>
+
+                <!-- Step Progress -->
+                <div class="grid grid-cols-1 sm:grid-cols-4 gap-4 text-center text-xs relative">
+                    <div class="p-3 bg-slate-900/60 rounded-lg border border-slate-700" id="step1">
+                        <i class="fa-solid fa-box-archive text-lg text-cyan-400 mb-1"></i>
+                        <p class="font-bold text-white">Order Received</p>
+                        <p class="text-slate-400 text-[10px]">Oct 2, 2026</p>
+                    </div>
+                    <div class="p-3 bg-slate-900/60 rounded-lg border border-slate-700" id="step2">
+                        <i class="fa-solid fa-warehouse text-lg text-cyan-400 mb-1"></i>
+                        <p class="font-bold text-white">Dispatched</p>
+                        <p class="text-slate-400 text-[10px]">Oct 3, 2026</p>
+                    </div>
+                    <div class="p-3 bg-slate-900/60 rounded-lg border border-cyan-500 bg-cyan-500/10" id="step3">
+                        <i class="fa-solid fa-truck-fast text-lg text-cyan-400 mb-1"></i>
+                        <p class="font-bold text-white">In Transit</p>
+                        <p class="text-slate-400 text-[10px]">En Route</p>
+                    </div>
+                    <div class="p-3 bg-slate-900/60 rounded-lg border border-slate-700 opacity-50" id="step4">
+                        <i class="fa-solid fa-house-circle-check text-lg text-slate-400 mb-1"></i>
+                        <p class="font-bold text-slate-300">Delivered</p>
+                        <p class="text-slate-400 text-[10px]">Pending</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ELECTRONICS SHOWCASE SECTION -->
+    <section id="electronics" class="py-20 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-10">
+                <span class="text-xs font-bold text-indigo-600 uppercase tracking-widest">Electronics Store</span>
+                <h2 class="text-3xl font-extrabold text-slate-900 mt-1">Tech & Device Catalog</h2>
+                <p class="text-slate-600 text-sm mt-2">Browse our high-grade laptops, smartphones, and corporate office electronics.</p>
+            </div>
+
+            <!-- Filter Tabs & Search -->
+            <div class="flex flex-col sm:flex-row items-center justify-between mb-8 gap-4">
+                <div class="flex flex-wrap gap-2">
+                    <button onclick="filterElectronics('all')" class="elec-btn active px-4 py-2 rounded-lg text-xs font-bold bg-navy-900 text-white">All Items</button>
+                    <button onclick="filterElectronics('phones')" class="elec-btn px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">Smartphones</button>
+                    <button onclick="filterElectronics('laptops')" class="elec-btn px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">Laptops</button>
+                    <button onclick="filterElectronics('accessories')" class="elec-btn px-4 py-2 rounded-lg text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100">Accessories</button>
+                </div>
+            </div>
+
+            <!-- Electronics Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" id="electronicsGrid">
+                <!-- Product 1 -->
+                <div class="elec-card bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between hover:shadow-md transition-shadow" data-category="phones">
+                    <div>
+                        <div class="h-40 bg-slate-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=400&q=80" alt="Smartphone" class="h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/1e293b/FFFFFF?text=Flagship+Phone';">
+                        </div>
+                        <span class="text-[10px] font-bold uppercase text-indigo-600 tracking-wider">Smartphone</span>
+                        <h4 class="font-bold text-slate-900 text-base mt-1">Flagship 5G Smartphone</h4>
+                        <p class="text-xs text-slate-500 mt-1">256GB Storage, OLED Display, Dual SIM.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span class="font-extrabold text-slate-900 text-sm">Wholesale Rate</span>
+                        <button onclick="openProductModal('Flagship 5G Smartphone')" class="text-xs bg-indigo-600 text-white font-semibold px-3 py-1.5 rounded hover:bg-indigo-700">Inquire</button>
+                    </div>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="elec-card bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between hover:shadow-md transition-shadow" data-category="laptops">
+                    <div>
+                        <div class="h-40 bg-slate-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?auto=format&fit=crop&w=400&q=80" alt="Laptop" class="h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/1e293b/FFFFFF?text=UltraBook';">
+                        </div>
+                        <span class="text-[10px] font-bold uppercase text-indigo-600 tracking-wider">Laptop</span>
+                        <h4 class="font-bold text-slate-900 text-base mt-1">Pro UltraBook 15"</h4>
+                        <p class="text-xs text-slate-500 mt-1">16GB RAM, 512GB SSD, Core i7 / M-Series.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span class="font-extrabold text-slate-900 text-sm">In Stock</span>
+                        <button onclick="openProductModal('Pro UltraBook 15')" class="text-xs bg-indigo-600 text-white font-semibold px-3 py-1.5 rounded hover:bg-indigo-700">Inquire</button>
+                    </div>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="elec-card bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between hover:shadow-md transition-shadow" data-category="accessories">
+                    <div>
+                        <div class="h-40 bg-slate-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=400&q=80" alt="Headphones" class="h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/1e293b/FFFFFF?text=Headphones';">
+                        </div>
+                        <span class="text-[10px] font-bold uppercase text-indigo-600 tracking-wider">Accessory</span>
+                        <h4 class="font-bold text-slate-900 text-base mt-1">Wireless ANC Headphones</h4>
+                        <p class="text-xs text-slate-500 mt-1">Active Noise Cancelling, 30h Battery.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span class="font-extrabold text-slate-900 text-sm">Bulk Offer</span>
+                        <button onclick="openProductModal('Wireless ANC Headphones')" class="text-xs bg-indigo-600 text-white font-semibold px-3 py-1.5 rounded hover:bg-indigo-700">Inquire</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="elec-card bg-white border border-slate-200 rounded-xl p-4 flex flex-col justify-between hover:shadow-md transition-shadow" data-category="laptops">
+                    <div>
+                        <div class="h-40 bg-slate-100 rounded-lg flex items-center justify-center mb-3 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1588872657578-7efd1f1555ed?auto=format&fit=crop&w=400&q=80" alt="Workstation" class="h-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/400x300/1e293b/FFFFFF?text=Workstation';">
+                        </div>
+                        <span class="text-[10px] font-bold uppercase text-indigo-600 tracking-wider">Laptop</span>
+                        <h4 class="font-bold text-slate-900 text-base mt-1">Business Workstation 14"</h4>
+                        <p class="text-xs text-slate-500 mt-1">Rugged build, Long Battery Life, Enterprise Security.</p>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between">
+                        <span class="font-extrabold text-slate-900 text-sm">In Stock</span>
+                        <button onclick="openProductModal('Business Workstation 14')" class="text-xs bg-indigo-600 text-white font-semibold px-3 py-1.5 rounded hover:bg-indigo-700">Inquire</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US SECTION -->
+    <section id="about" class="py-20 bg-white border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <span class="text-xs font-bold text-cyan-600 uppercase tracking-widest">About IRA Trading Company</span>
+                    <h2 class="text-3xl font-extrabold text-slate-900 leading-tight">Connecting Global Suppliers with Local Businesses & Consumers</h2>
+                    <p class="text-slate-600 text-sm leading-relaxed">
+                        Founded with a vision to bridge global markets and local requirements, **IRA Trading Company** operates across multiple sectors including vehicle importing, commercial logistics, and high-tech electronic devices distribution.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 pt-2">
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <p class="text-2xl font-extrabold text-navy-900">100%</p>
+                            <p class="text-xs text-slate-500 mt-1">Verified Sourcing & Compliance</p>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded-xl border border-slate-100">
+                            <p class="text-2xl font-extrabold text-cyan-600">24/7</p>
+                            <p class="text-xs text-slate-500 mt-1">Logistics & Tracking Support</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl border border-slate-200 bg-slate-900 p-2">
+                        <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=800&q=80" alt="Office and Logistics" class="rounded-xl w-full object-cover" onerror="this.onerror=null; this.src='https://placehold.co/800x500/1e293b/FFFFFF?text=IRA+Trading+Company';">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <!-- Info Column -->
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-xs font-bold text-cyan-400 uppercase tracking-widest">Get In Touch</span>
+                    <h2 class="text-3xl font-extrabold">Contact IRA Trading Company</h2>
+                    <p class="text-slate-400 text-sm">Have questions regarding vehicle imports, delivery contracts, or electronic device orders? Send us a message or call directly.</p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-slate-800 text-cyan-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm text-white">Headquarters</h5>
+                                <p class="text-xs text-slate-400">Commercial District, Avenue de I'Independance, Bujumbura, Burundi</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-slate-800 text-cyan-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm text-white">Phone & WhatsApp</h5>
+                                <p class="text-xs text-slate-400">+257 68 00 00 00 / +257 79 00 00 00</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start space-x-4">
+                            <div class="w-10 h-10 rounded-lg bg-slate-800 text-cyan-400 flex items-center justify-center shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5 class="font-bold text-sm text-white">Email Address</h5>
+                                <p class="text-xs text-slate-400">info@iratrading.com / sales@iratrading.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="lg:col-span-7 bg-slate-800 p-8 rounded-2xl border border-slate-700 shadow-xl">
+                    <form id="contactForm" onsubmit="submitContactForm(event)" class="space-y-4">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Your Name</label>
+                                <input type="text" required class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-500">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-300 mb-1">Email Address</label>
+                                <input type="email" required class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Service Interest</label>
+                            <select class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-500">
+                                <option>Vehicle Importing</option>
+                                <option>Delivery & Logistics Services</option>
+                                <option>Electronics & Gadgets Purchase</option>
+                                <option>General Inquiry</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Message</label>
+                            <textarea rows="4" required class="w-full px-4 py-2.5 rounded-lg bg-slate-900 border border-slate-700 text-white text-sm focus:outline-none focus:border-cyan-500"></textarea>
+                        </div>
+                        <button type="submit" class="w-full py-3 bg-cyan-500 hover:bg-cyan-400 text-slate-900 font-bold rounded-lg transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 text-slate-400 text-xs py-8 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div class="flex items-center space-x-2">
+                <span class="font-bold text-white text-sm">IRA Trading Company</span>
+                <span>&copy; 2026. All Rights Reserved.</span>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#home" class="hover:text-white">Home</a>
+                <a href="#services" class="hover:text-white">Services</a>
+                <a href="#vehicles" class="hover:text-white">Vehicles</a>
+                <a href="#electronics" class="hover:text-white">Electronics</a>
+                <a href="#contact" class="hover:text-white">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- FLOATING WHATSAPP CHAT BUTTON -->
+    <a href="https://wa.me/25768000000" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:bg-green-600 transition-all transform hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
+
+    <!-- QUOTE MODAL -->
+    <div id="quoteModal" class="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/80 backdrop-blur-sm hidden px-4">
+        <div class="bg-white rounded-2xl max-w-lg w-full p-6 relative shadow-2xl">
+            <button onclick="closeModal('quoteModal')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 class="text-xl font-bold text-slate-900 mb-1">Request a Fast Quote</h3>
+            <p class="text-xs text-slate-500 mb-4">Fill in your specifications for vehicle sourcing, freight, or device orders.</p>
+
+            <form onsubmit="submitQuoteModal(event)" class="space-y-3">
+                <div>
+                    <label class="block text-xs font-medium text-slate-700">Full Name</label>
+                    <input type="text" required class="w-full px-3 py-2 border rounded-lg text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-700">Service Category</label>
+                    <select id="modalCategory" class="w-full px-3 py-2 border rounded-lg text-sm">
+                        <option value="Vehicle Import">Vehicle Import Request</option>
+                        <option value="Logistics Quote">Delivery / Logistics Quote</option>
+                        <option value="Electronics Order">Electronics Wholesale Order</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-700">Details / Specific Item</label>
+                    <input type="text" id="modalDetails" placeholder="e.g. Toyota Prado 2022 or 50x Laptops" required class="w-full px-3 py-2 border rounded-lg text-sm">
+                </div>
+                <div>
+                    <label class="block text-xs font-medium text-slate-700">Phone / WhatsApp Number</label>
+                    <input type="tel" required class="w-full px-3 py-2 border rounded-lg text-sm">
+                </div>
+                <button type="submit" class="w-full py-2.5 bg-accent-blue text-white font-bold rounded-lg text-sm hover:bg-blue-700">
+                    Submit Request
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Toggle mobile navigation menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Modal Open/Close Controls
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Prefill modal with specific vehicle or product
+        function prefillQuote(itemTitle) {
+            document.getElementById('modalCategory').value = 'Vehicle Import';
+            document.getElementById('modalDetails').value = itemTitle;
+            openModal('quoteModal');
+        }
+
+        function openProductModal(productName) {
+            document.getElementById('modalCategory').value = 'Electronics Order';
+            document.getElementById('modalDetails').value = productName;
+            openModal('quoteModal');
+        }
+
+        // Delivery Package Tracking Simulator Logic
+        function setSampleCode(code) {
+            document.getElementById('trackingInput').value = code;
+        }
+
+        function trackPackage(event) {
+            event.preventDefault();
+            const code = document.getElementById('trackingInput').value;
+            const resBox = document.getElementById('trackingResult');
+            const resCode = document.getElementById('resCode');
+            const resStatus = document.getElementById('resStatus');
+
+            resCode.innerText = code;
+            resBox.classList.remove('hidden');
+
+            if (code.includes('Transit')) {
+                resStatus.innerText = 'In Transit';
+                resStatus.className = 'inline-block bg-blue-500/20 text-blue-400 text-xs font-bold px-3 py-1 rounded-full border border-blue-500/30 ml-2';
+            } else {
+                resStatus.innerText = 'Processing Customs';
+                resStatus.className = 'inline-block bg-yellow-500/20 text-yellow-400 text-xs font-bold px-3 py-1 rounded-full border border-yellow-500/30 ml-2';
+            }
+        }
+
+        // Electronics Catalog Filter Logic
+        function filterElectronics(category) {
+            const cards = document.querySelectorAll('.elec-card');
+            const buttons = document.querySelectorAll('.elec-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-navy-900', 'text-white');
+                btn.classList.add('bg-white', 'text-slate-700');
+            });
+
+            event.target.classList.remove('bg-white', 'text-slate-700');
+            event.target.classList.add('bg-navy-900', 'text-white');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Contact & Modal Form Submission Handlers
+        function submitContactForm(e) {
+            e.preventDefault();
+            alert('Thank you! Your inquiry has been sent to IRA Trading Company. Our team will get back to you shortly.');
+            e.target.reset();
+        }
+
+        function submitQuoteModal(e) {
+            e.preventDefault();
+            alert('Quote Request Received! An IRA Trading representative will contact you with pricing details.');
+            closeModal('quoteModal');
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
